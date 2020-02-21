@@ -68,7 +68,49 @@ specialValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+",
 
 }
 
+// Establish an array of user input arrays
+var collectiveValue = {
+  upperCaseValue,
+  lowerCaseValue,
+  numbersValue,
+  specialValue
+}
 
+// Concatenating the digits in charCount to have a string length of charCountValue for generator function to know when to end
+var str1 = "1";
+var charCountValue_toLength = "";
+for (j=0; j < charCountValue; j++) {
+  charCountValue_toLength = charCountValue_toLength.concat(str1);
+}
+
+// Putting password together by randomizing which array is picked, and then randomizing the selection from each array until length is reached
+for (i = 0; i < charCountValue; i++) {
+  var completedPassword = "";
+  checkPasswordLength:
+  while (completedPassword.length <= charCountValue_toLength.length) {
+    shuffle(collectiveValues);
+      var randomizeUpperCaseValue = upperCaseValue[Math.floor(Math.random() * upperCaseValue.length)];
+
+        var completedPassword = completedPassword.concat(randomizeUpperCaseValue);
+
+      var randomizeNumbers = numbersValue[Math.floor(Math.random() * numbersValue.length)];
+
+        var completedPassword = completedPassword.concat(randomizeNumbers);
+
+      var randomizeSpecialCharacters = specialCharactersValue[Math.floor(Math.random() * specialCharactersValue.length)];
+
+        var completedPassword = completedPassword.concat(randomizeSpecialCharacters);
+      if (completedPassword.length !== charCountValue_toLength.length) {
+        continue checkPasswordLength;
+      }
+  }
+  // used to log the character length in relation to what it should be based off of what the user entered
+  function getCharacterLength (str) {
+    return [...str].length;
+
+  }
+  return completedPassword;
+}
 }
 
 
