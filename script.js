@@ -57,7 +57,7 @@ if (lowerCase === true) {
   }
 
 
-// Upper/Lower case values based on user confirm input
+// Uppercase values based on user input
 if (upperCase === true) {
 upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
@@ -94,7 +94,7 @@ specialValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+",
 console.log(passwordValue)
 var newPassword = ""
 
-for(var i = 0; i < passwordValue.length; i++){
+for(var i = 0; i < lengthValue; i++){
   newPassword += passwordValue[Math.floor(Math.random() * passwordValue.length)];
 
 }
