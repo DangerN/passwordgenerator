@@ -10,7 +10,11 @@
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var lowerCaseValue;
+var upperCaseValue;
+var numbersValue;
+var specialValue;
+var lengthValue;
 
 
 // Write password to the #password input
@@ -31,10 +35,12 @@ function generatePassword() {
   var upperCase = confirm("Do you want uppercase letters?");
   var numbers = confirm("Do you want Numbers?");
   var special = confirm("Do you want special characters?");
+  
+
 
   // Password length based on user prompt input
 if (length >=8 && length <=128) {
-  var lengthValue = parseInt(length);
+  lengthValue = parseInt(length);
 }
 else {
   alert("Invalid value. Please try again.")
@@ -43,32 +49,36 @@ else {
 if (lowerCase === true) {
   lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   }
-  else {
-    alert("No lowercase letters!");
-  }
+
 
 // Upper/Lower case values based on user confirm input
 if (upperCase === true) {
 upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 }
-else {
-  alert("No uppercase letter!");
-}
+
 // Numbers values based on user confirm input
 if (numbers === true) {
 numbersValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 }
-else {
-  alert("No numbers!");
-}
+
 // Special Characters values based on user confirm input
 if (special === true) {
 specialValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "'", "<", ">", "?", "/", "`", "~"];
 }
-else{
-  alert("No special characters!");
+
+
+// Create for loop that loops through criteria and concatenates them randomly
+
+var passwordValue = [lowerCaseValue + upperCaseValue + numbersValue + specialValue];
+
+console.log(passwordValue)
+var newPassword = ""
+for(var i = 0; i < passwordValue.length; i++){
+  newPassword += passwordValue[Math.floor(Math.random() * passwordValue.length)];
+
 }
 
+return newPassword
 
 }
 
