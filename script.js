@@ -35,6 +35,7 @@ function generatePassword() {
   var upperCase = confirm("Do you want uppercase letters?");
   var numbers = confirm("Do you want Numbers?");
   var special = confirm("Do you want special characters?");
+  var passwordValue = [];
   
 
 
@@ -48,31 +49,51 @@ else {
 // Upper/Lower case values based on user confirm input
 if (lowerCase === true) {
   lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+  for (i = 0; i < lowerCaseValue.length; i++) {
+    passwordValue.push(lowerCaseValue[i]);
+  }
+
   }
 
 
 // Upper/Lower case values based on user confirm input
 if (upperCase === true) {
 upperCaseValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+for (i = 0; i < upperCaseValue.length; i++) {
+  passwordValue.push(upperCaseValue[i]);
+}
+
 }
 
 // Numbers values based on user confirm input
 if (numbers === true) {
 numbersValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+for (i = 0; i < numbersValue.length; i++) {
+  passwordValue.push(numbersValue[i]);
+}
+
 }
 
 // Special Characters values based on user confirm input
 if (special === true) {
 specialValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", ":", ";", "'", "<", ">", "?", "/", "`", "~"];
+
+  for (i = 0; i < specialValue.length; i++) {
+  passwordValue.push(specialValue[i]);
+}
+
+
 }
 
 
 // Create for loop that loops through criteria and concatenates them randomly
 
-var passwordValue = [lowerCaseValue + upperCaseValue + numbersValue + specialValue];
-
 console.log(passwordValue)
 var newPassword = ""
+
 for(var i = 0; i < passwordValue.length; i++){
   newPassword += passwordValue[Math.floor(Math.random() * passwordValue.length)];
 
