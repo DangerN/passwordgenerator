@@ -131,10 +131,13 @@ button[disabled] {
 }
 
 @media (max-width: 500px) {
-  .card{
-    margin-bottom: 50px;
-  }
   .btn {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .card{
+    margin-bottom: 50px;
   }
 }
