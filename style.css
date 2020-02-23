@@ -131,7 +131,7 @@ button[disabled] {
 }
 
 @media (max-width: 500px) {
-  .wrapper{
+  .card{
     margin-bottom: 50px;
   }
   .btn {
