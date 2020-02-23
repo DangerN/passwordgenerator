@@ -118,6 +118,8 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* Makes layout responsive at different screen sizes */
+
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

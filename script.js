@@ -28,7 +28,7 @@ function writePassword() {
 
 }
 
-// Generating password
+// Generating password with a function. Creates the prompts and confirms user must go through to create password
 function generatePassword() {
   var length = prompt("Choose your password length. It must be least 8 characters and no more than 128 characters");
   var lowerCase = confirm("Do you want lowercase letters?");
@@ -46,9 +46,7 @@ if (length >=8 && length <=128) {
 else {
   while (
     length !== null &&
-    (
-    isNaN(lengthValue)
-    )
+    (isNaN(lengthValue))
   )
   {
   alert ("Password length must be a number and 8 to 128 characters");
@@ -56,8 +54,7 @@ else {
 }
 }
 
-console.log(lengthValue)
-// Upper/Lower case values based on user confirm input
+//Lower case values based on user confirm input
 if (lowerCase === true) {
   lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
