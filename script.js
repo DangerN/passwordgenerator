@@ -91,7 +91,6 @@ specialValue = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+",
 
 // Create for loop that loops through criteria and concatenates them randomly
 
-console.log(passwordValue)
 var newPassword = ""
 
 for(var i = 0; i < lengthValue; i++){
@@ -99,7 +98,7 @@ for(var i = 0; i < lengthValue; i++){
 
 }
 
-return newPassword
+return newPassword;
 
 }
 
