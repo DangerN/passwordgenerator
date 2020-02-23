@@ -44,8 +44,19 @@ if (length >=8 && length <=128) {
   lengthValue = parseInt(length);
 }
 else {
-  alert("Invalid value. Please try again.")
+  while (
+    length !== null &&
+    (
+    isNaN(lengthValue)
+    )
+  )
+  {
+  alert ("Password length must be a number and 8 to 128 characters");
+  lengthValue = prompt(length);
 }
+}
+
+console.log(lengthValue)
 // Upper/Lower case values based on user confirm input
 if (lowerCase === true) {
   lowerCaseValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
